@@ -31,7 +31,7 @@
 				<p class="ans"
 					ng-class="{
 						image:Answer.image,
-						selected:isSelected($parent.index,$index),
+						selected:isSelected($parent.$index,$index),
 						correct:isCorrect($parent.$index,$index)
 					}"
 					ng-style="{ 'background-image':'url({{Answer.image}})' }"
@@ -50,8 +50,7 @@
 				<h3>Results</h3>
 				<p>You scored {{percentage}}% by correctly answering {{score}} of the total {{totalQuestions}} questions.</p>
 				<p>Use the links below to challege your friends</p>
-				<div class="share" ng-bind-html="createShareLinks(percentage)">
-				</div>
+				<div class="share" ng-bind-html="createShareLinks(percentage)"></div>
 			</div>
 
 		</div>

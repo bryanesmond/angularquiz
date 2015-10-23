@@ -21,7 +21,7 @@
 			if( questionState != 'answered' ){
 				$scope.myQuestions[qIndex].selectedAnswer = aIndex;
 				var correctAnswer = $scope.myQuestions[qIndex].correct;
-				$scope.myQuestions[qIndex].correctness = correctAnswer;
+				$scope.myQuestions[qIndex].correctAnswer = correctAnswer;
 
 				if( aIndex === correctAnswer ){
 					$scope.myQuestions[qIndex].correctness = 'correct';
@@ -49,11 +49,11 @@
 
 		$scope.createShareLinks = function(percentage){
 
-			var url = 'http://bryanesmond.me';
+			var url = 'http://bryanesmond.me/angularquiz';
 
-			var emailLink = '<a class="btn email" href="mailto:?subject=Try to beat my quiz score!&amp;body=I scored a '+percentage+'% on this quiz about Saturn. Try to beat my score at '+url+'> Email A Friend</a>';
+			var emailLink = '<a class="btn email" href="mailto:?subject=Try to beat my quiz score!&amp;body=I scored a '+percentage+'% on this quiz about Saturn. Try to beat my score at '+url+'"> Email A Friend</a>';
 
-			var twitterLink = '<a class="btn twitter" target="_blank" href="http://twitter.com/share?text=I scored a '+percentage+'% on this quiz about Saturn. Try to beat my score at&amp;hashtags=SaturnQuiz&amp;url">Tweet Your Score</a>';
+			var twitterLink = '<a class="btn twitter" target="_blank" href="http://twitter.com/share?text=I scored a '+percentage+'% on this quiz about Saturn. Try to beat my score at&amp;hashtags=SaturnQuiz&amp;url='+url+'">Tweet Your Score</a>';
 
 			var newMarkup = emailLink + twitterLink;
 
